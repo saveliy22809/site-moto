@@ -1,0 +1,83 @@
+/* Общие стили */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8; /* Мягкий светло-серый фон */
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+h1, h2 {
+    color: #2c3e50; /* Более темный оттенок синего */
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 2.5em;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.8em;
+    border-bottom: 3px solid #3498db; /* Синий подчеркивающий элемент */
+    padding-bottom: 5px;
+}
+
+/* Контейнер */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Карточка */
+.card {
+    background: white;
+    border-radius: 12px; /* Округлые углы */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Мягкая тень */
+    padding: 25px;
+    transition: transform 0.3s, box-shadow 0.3s ease;
+    margin: 20px 0;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Легкий эффект подъема */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* Увеличенная тень */
+}
+
+/* Информационный блок */
+.info-block p {
+    margin: 10px 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.info-block p strong {
+    color: #3498db;
+}
+
+/* Кнопки */
+.back-button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.back-button {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 8px; /* Округлые углы */
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.back-button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}

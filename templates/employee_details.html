@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Детали сотрудника</title>
+    <link rel="stylesheet" href="/static/details_style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Детали сотрудника</h1>
+        <div class="card">
+            <h2>Личная информация</h2>
+            <div class="info-block">
+                <p><strong>Фамилия:</strong> {{ employee.individual.Familiya }}</p>
+                <p><strong>Имя:</strong> {{ employee.individual.Imya }}</p>
+                <p><strong>Отчество:</strong> {{ employee.individual.Otchestvo }}</p>
+                <p><strong>Дата рождения:</strong> {{ employee.individual.DateOfBirth.strftime('%Y-%m-%d') }}</p>
+                <p><strong>Адрес:</strong> {{ employee.individual.Address }}</p>
+                <p><strong>Телефон:</strong> {{ employee.individual.Phone }}</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Данные сотрудника</h2>
+            <div class="info-block">
+                <p><strong>Образование:</strong> {{ employee.EducationLevel }}</p>
+                <p><strong>Рейтинг:</strong> {{ employee.Rating }}</p>
+                <p><strong>Дата приема:</strong> {{ employee.DatePriem.strftime('%Y-%m-%d') }}</p>
+                <p><strong>Дата увольнения:</strong> {{ employee.DateUvol.strftime('%Y-%m-%d') if employee.DateUvol else 'N/A' }}</p>
+                <p><strong>Комментарий:</strong> {{ employee.Comment }}</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Образование</h2>
+            <div class="info-block">
+                <p><strong>Учебное заведение:</strong> {{ education.EducationInstitute }}</p>
+                <p><strong>Год окончания:</strong> {{ education.EducationYearFinish }}</p>
+                <p><strong>Специальность:</strong> {{ education.EducationSpec }}</p>
+                <p><strong>Квалификация:</strong> {{ education.EducationQual }}</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Банковская карта</h2>
+            <div class="info-block">
+                <p><strong>Номер:</strong> {{ bank_card.NumberBankKar }}</p>
+                <p><strong>Банк:</strong> {{ bank_card.Bank }}</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Должность</h2>
+            <div class="info-block">
+                <p><strong>Ранг:</strong> {{ position.Rank }}</p>
+                <p><strong>Зарплата:</strong> {{ position.Wage }}</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Документы</h2>
+            <div class="info-block">
+                <p><strong>Тип документа:</strong> {{ document.DocumentType }}</p>
+                <p><strong>Серия:</strong> {{ document.DocumentSeria }}</p>
+                <p><strong>Номер:</strong> {{ document.DocumentNumber }}</p>
+                <p><strong>Дата выдачи:</strong> {{ document.DateDocument }}</p>
+                <p><strong>Кем выдан:</strong> {{ document.DocumentWho }}</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Дополнительная информация</h2>
+            <div class="info-block">
+                <p><strong>ИНН:</strong> {{ employee.Inn }}</p>
+                <p><strong>СНИЛС:</strong> {{ employee.Snils }}</p>
+            </div>
+        </div>
+
+        <div class="back-button-container">
+            <a href="/employees" class="back-button">Вернуться к списку сотрудников</a>
+        </div>
+    </div>
+</body>
+</html>

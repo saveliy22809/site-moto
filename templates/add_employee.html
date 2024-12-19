@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Добавить Сотрудника</title>
+</head>
+<body>
+    <div class="form-container">
+        <h1 class="form-title">Добавить Сотрудника</h1>
+        <form method="post" action="/add_employee">
+            <div class="form-section">
+                <h2>Сотрудник</h2>
+                <select id="individual_id" name="individual_id" required>
+                    <option value="" disabled selected>Выберите</option>
+                    {% for individual in individuals %}
+                    <option value="{{ individual.IndividualsID }}">
+                        {{ individual.Familiya }} {{ individual.Imya }} {{ individual.Otchestvo }}
+                    </option>
+                {% endfor %}
+            </select>
+            </div>
+
+            <div class="form-section">
+                <h2>Образование</h2>
+                <label for="education_level">Уровень образования:</label>
+                <select id="education_level" name="education_level" required>
+                    <option value="" disabled selected>Выберите уровень</option>
+                    <option value="Среднее">Среднее</option>
+                    <option value="Среднее профессиональное">Среднее профессиональное</option>
+                    <option value="Высшее">Высшее</option>
+                    <option value="Аспирантура">Аспирантура</option>
+                </select>
+
+                <label for="education_spec">Специальность:</label>
+                <select id="education_spec" name="education_spec" required>
+                    <option value="" disabled selected>Выберите специальность</option>
+                    <option value="Программист">Программист</option>
+                    <option value="Врач">Врач</option>
+                    <option value="Архитектор">Архитектор</option>
+                    <option value="Юрист">Юрист</option>
+                    <option value="Учитель">Учитель</option>
+                </select>
+
+                <label for="education_qual">Квалификация:</label>
+                <select id="education_qual" name="education_qual" required>
+                    <option value="" disabled selected>Выберите квалификацию</option>
+                    <option value="Бакалавр">Бакалавр</option>
+                    <option value="Магистр">Магистр</option>
+                    <option value="Кандидат наук">Кандидат наук</option>
+                    <option value="Доктор наук">Доктор наук</option>
+                </select>
+
+                <label for="education_institute">Учебное заведение:</label>
+                <select id="education_institute" name="education_institute" required>
+                    <option value="" disabled selected>Выберите учебное заведение</option>
+                    <option value="Балтийский федеральный университет имени Иммануила Канта (БФУ)">Балтийский федеральный университет имени Иммануила Канта (БФУ)</option>
+                    <option value="Калининградский филиал РАНХиГС">Калининградский филиал РАНХиГС</option>
+                    <option value="Калининградский государственный технический университет (КГТУ)">Калининградский государственный технический университет (КГТУ)</option>
+                    <option value="Калининградский морской рыбопромышленный колледж">Калининградский морской рыбопромышленный колледж</option>
+                    <option value="Калининградский педагогический колледж">Калининградский педагогический колледж</option>
+                </select>
+
+                <label for="education_year_finish">Год окончания:</label>
+                <input type="number" id="education_year_finish" name="education_year_finish" required>
+            </div>
+
+            <div class="form-section">
+                <h2>Банковская карта</h2>
+                <label for="number_bank_kar">Номер карты:</label>
+                <input type="text" id="number_bank_kar" name="number_bank_kar" required>
+
+                <label for="bank">Банк:</label>
+                <select id="bank" name="bank" required>
+                    <option value="" disabled selected>Выберите банк</option>
+                    <option value="Сбербанк">Сбербанк</option>
+                    <option value="Альфа-банк">Альфа-банк</option>
+                    <option value="Тинькофф">Тинькофф</option>
+                </select>
+            </div>
+
+            <div class="form-section">
+                <h2>Должность</h2>
+                <label for="rank">Ранг:</label>
+                <input type="text" id="rank" name="rank" required>
+
+                <label for="wage">Зарплата:</label>
+                <input type="number" step="0.01" id="wage" name="wage" required>
+
+                <label for="discharge">Разряд:</label>
+                <input type="number" id="discharge" name="discharge" required>
+            </div>
+
+            <div class="form-section">
+                <h2>Дополнительная информация</h2>
+                <label for="rating">Рейтинг:</label>
+                <input type="number" id="rating" name="rating" required>
+
+                <label for="date_priem">Дата приема:</label>
+                <input type="date" id="date_priem" name="date_priem" required>
+
+                <label for="date_uvol">Дата увольнения (если есть):</label>
+                <input type="date" id="date_uvol" name="date_uvol">
+
+                <label for="comment">Комментарий:</label>
+                <textarea id="comment" name="comment"></textarea>
+            </div>
+
+            <div class="form-section">
+                <h2>Документы</h2>
+                <label for="document_type">Тип документа:</label>
+                <select id="document_type" name="document_type" required>
+                    <option value="" disabled selected>Выберите документ</option>
+                    <option value="Паспорт">Паспорт</option>
+                    <option value="Свидетельство о рождении гражданина РФ">Свидетельство о рождении гражданина РФ</option>
+                </select>
+
+                <label for="document_seria">Серия документа:</label>
+                <input type="text" id="document_seria" name="document_seria" required>
+
+                <label for="document_number">Номер документа:</label>
+                <input type="text" id="document_number" name="document_number" required>
+
+                <label for="date_document">Дата выдачи:</label>
+                <input type="date" id="date_document" name="date_document" required>
+
+                <label for="document_who">Кем выдан:</label>
+                <input type="text" id="document_who" name="document_who" required>
+            </div>
+
+            <div class="form-section">
+                <h2>Идентификационная информация</h2>
+                <label for="inn">ИНН:</label>
+                <input type="number" id="inn" name="inn" required>
+
+                <label for="snils">СНИЛС:</label>
+                <input type="text" id="snils" name="snils" required>
+            </div>
+
+            <div class="form-button-container">
+                <button type="submit" class="submit-button">Добавить</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

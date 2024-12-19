@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список сотрудников</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="header">
+        <nav>
+            <a href="/">Главная</a>
+            <a href="/individual">Физ Лица</a>
+            <a href="/employees">Сотрудники</a>
+            <a href="/help">Помощь</a>
+        </nav>
+    </div>
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Фамилия</th>
+                <th>Имя</th>
+                <th>Отчество</th>
+                <th>Дата рождения</th>
+                <th>Адрес</th>
+                <th>Телефон</th>
+                <th>Образование</th>
+                <th>Рейтинг</th>
+                <th>Дата приема</th>
+                <th>Дата увольнения</th>
+                <th>Комментарий</th>
+                <th>Действия</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for employee in employees %}
+            <tr>
+                <td>{{ employee.RegNumber }}</td>
+                <td>{{ employee.individual.Familiya }}</td>
+                <td>{{ employee.individual.Imya }}</td>
+                <td>{{ employee.individual.Otchestvo }}</td>
+                <td>{{ employee.individual.DateOfBirth.strftime('%Y-%m-%d') }}</td>
+                <td>{{ employee.individual.Address }}</td>
+                <td>{{ employee.individual.Phone }}</td>
+                <td>{{ employee.EducationLevel }}</td>
+                <td>{{ employee.Rating }}</td>
+                <td>{{ employee.DatePriem.strftime('%Y-%m-%d') }}</td>
+                <td>{{ employee.DateUvol.strftime('%Y-%m-%d') if employee.DateUvol else 'N/A' }}</td>
+                <td>{{ employee.Comment }}</td>
+                <td>
+                    <div class="actions-container">
+                        <a href="/details/{{ employee.RegNumber }}" class="details-button">Подробнее</a>
+                        <a href="/edit/{{ employee.RegNumber }}" class="edit-button">Изменить</a>
+                        <a href="/delete/{{ employee.RegNumber }}" class="delete-button">Удалить</a>
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="button-container">
+        <a href="/add_employee" class="add-employee-button">Добавить нового сотрудника</a>
+    </div>
+</body>
+</html>

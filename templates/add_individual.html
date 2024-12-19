@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Добавить Физическое Лицо</title>
+</head>
+<body>
+    <div class="form-container">
+        <h1 class="form-title">Добавить Физическое Лицо</h1>
+        <form method="post" action="/add_individual">
+            <label for="familiya">Фамилия:</label>
+            <input type="text" id="familiya" name="familiya" required>
+
+            <label for="imya">Имя:</label>
+            <input type="text" id="imya" name="imya" required>
+
+            <label for="otchestvo">Отчество:</label>
+            <input type="text" id="otchestvo" name="otchestvo">
+
+            <label for="date_of_birth">Дата рождения:</label>
+            <input type="date" id="date_of_birth" name="date_of_birth" required>
+
+            <label for="address">Адрес:</label>
+            <input type="text" id="address" name="address" required>
+
+            <label for="phone">Телефон:</label>
+            <input type="text" id="phone" name="phone" required>
+
+            <button type="submit" class="submit-button">Добавить</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редактирование сотрудника</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1 class="form-title">Редактировать данные сотрудника</h1>
+
+    <form method="POST" class="form-container">
+        <div class="form-section">
+            <h2>Сотрудник</h2>
+            <label for="familiya">Фамилия:</label>
+            <input type="text" id="familiya" name="familiya" value="{{ individual.Familiya }}" readonly>
+
+            <label for="imya">Имя:</label>
+            <input type="text" id="imya" name="imya" value="{{ individual.Imya }}" readonly>
+
+            <label for="otchestvo">Отчество:</label>
+            <input type="text" id="otchestvo" name="otchestvo" value="{{ individual.Otchestvo }}" readonly>
+
+            <label for="date_of_birth">Дата рождения:</label>
+            <input type="date" id="date_of_birth" name="date_of_birth" value="{{ individual.DateOfBirth.strftime('%Y-%m-%d') }}" readonly>
+
+            <label for="address">Адрес:</label>
+            <input type="text" id="address" name="address" value="{{ individual.Address }}" readonly>
+
+            <label for="phone">Телефон:</label>
+            <input type="text" id="phone" name="phone" value="{{ individual.Phone }}" readonly>
+        </div>
+        <div class="form-section">
+            <h2>Образование</h2>
+            <label for="education_level">Уровень образования:</label>
+            <select id="education_level" name="education_level" required>
+                <option value="" disabled>Выберите уровень</option>
+                <option value="Среднее" {% if employee.EducationLevel == "Среднее" %}selected{% endif %}>Среднее</option>
+                <option value="Среднее профессиональное" {% if employee.EducationLevel == "Среднее профессиональное" %}selected{% endif %}>Среднее профессиональное</option>
+                <option value="Высшее (бакалавр)" {% if employee.EducationLevel == "Высшее (бакалавр)" %}selected{% endif %}>Высшее (бакалавр)</option>
+                <option value="Высшее (магистр)" {% if employee.EducationLevel == "Высшее (магистр)" %}selected{% endif %}>Высшее (магистр)</option>
+                <option value="Аспирантура" {% if employee.EducationLevel == "Аспирантура" %}selected{% endif %}>Аспирантура</option>
+            </select>
+
+            <label for="education_spec">Специальность:</label>
+            <select id="education_spec" name="education_spec" required>
+                <option value="" disabled>Выберите специальность</option>
+                <option value="Программист" {% if employee.EducationLevel == "Программист" %}selected{% endif %}>Программист</option>
+                <option value="Врач" {% if employee.EducationLevel == "Врач" %}selected{% endif %}>Врач</option>
+                <option value="Архитектор" {% if employee.EducationLevel == "Архитектор" %}selected{% endif %}>Архитектор</option>
+                <option value="Юрист" {% if employee.EducationLevel == "Юрист" %}selected{% endif %}>Юрист</option>
+                <option value="Учитель" {% if employee.EducationLevel == "Учитель" %}selected{% endif %}>Учитель</option>
+            </select>
+
+            <label for="education_qual">Квалификация:</label>
+            <select id="education_qual" name="education_qual" required>
+                <option value="" disabled>Выберите квалификацию</option>
+                <option value="Бакалавр" {% if employee.EducationLevel == "Бакалавр" %}selected{% endif %}>Бакалавр</option>
+                <option value="Магистр" {% if employee.EducationLevel == "Магистр" %}selected{% endif %}>Магистр</option>
+                <option value="Кандидат наук" {% if employee.EducationLevel == "Кандидат наук" %}selected{% endif %}>Кандидат наук</option>
+                <option value="Доктор наук" {% if employee.EducationLevel == "Доктор наук" %}selected{% endif %}>Доктор наук</option>
+            </select>
+
+            <label for="education_institute">Учебное заведение:</label>
+            <select id="education_institute" name="education_institute" required>
+                <option value="" disabled>Выберите учебное заведение</option>
+                <option value="Балтийский федеральный университет имени Иммануила Канта (БФУ)" {% if employee.EducationLevel == "Балтийский федеральный университет имени Иммануила Канта (БФУ)" %}selected{% endif %}>Балтийский федеральный университет имени Иммануила Канта (БФУ)</option>
+                <option value="Калининградский филиал РАНХиГС" {% if employee.EducationLevel == "Калининградский филиал РАНХиГС" %}selected{% endif %}>Калининградский филиал РАНХиГС</option>
+                <option value="Калининградский государственный технический университет (КГТУ)" {% if employee.EducationLevel == "Калининградский государственный технический университет (КГТУ)" %}selected{% endif %}>Калининградский государственный технический университет (КГТУ)</option>
+                <option value="Калининградский морской рыбопромышленный колледж" {% if employee.EducationLevel == "Калининградский морской рыбопромышленный колледж" %}selected{% endif %}>Калининградский морской рыбопромышленный колледж</option>
+                <option value="Калининградский педагогический колледж" {% if employee.EducationLevel == "Калининградский педагогический колледж" %}selected{% endif %}>Калининградский педагогический колледж</option>
+            </select>
+
+            <label for="education_year_finish">Год окончания:</label>
+            <input type="number" id="education_year_finish" name="education_year_finish" value="{{ education.EducationYearFinish }}" required>
+        </div>
+
+        <div class="form-section">
+            <h2>Банковская карта</h2>
+            <label for="number_bank_kar">Номер карты:</label>
+            <input type="text" id="number_bank_kar" name="number_bank_kar" value="{{ bank_card.NumberBankKar }}" required>
+
+            <label for="bank">Банк:</label>
+            <input type="text" id="bank" name="bank" value="{{ bank_card.Bank }}" required>
+        </div>
+
+        <div class="form-section">
+            <h2>Должность</h2>
+            <label for="rank">Ранг:</label>
+            <input type="text" id="rank" name="rank" value="{{ position.Rank }}" required>
+
+            <label for="wage">Зарплата:</label>
+            <input type="number" step="0.01" id="wage" name="wage" value="{{ position.Wage }}" required>
+
+            <label for="discharge">Разряд:</label>
+            <input type="number" id="discharge" name="discharge" value="{{ employee_position.Discharge }}" required>
+        </div>
+
+        <div class="form-section">
+            <h2>Дополнительная информация</h2>
+            <label for="rating">Рейтинг:</label>
+            <input type="number" id="rating" name="rating" value="{{ employee.Rating }}" required>
+
+            <label for="date_priem">Дата приема:</label>
+            <input type="date" id="date_priem" name="date_priem" value="{{ employee.DatePriem.strftime('%Y-%m-%d') }}" required>
+
+            <label for="date_uvol">Дата увольнения:</label>
+            <input type="date" id="date_uvol" name="date_uvol" value="{{ employee.DateUvol.strftime('%Y-%m-%d') if employee.DateUvol else '' }}">
+
+            <label for="comment">Комментарий:</label>
+            <textarea id="comment" name="comment">{{ employee.Comment }}</textarea>
+        </div>
+
+        <div class="form-section">
+            <h2>Документы</h2>
+            <label for="document_type">Тип документа:</label>
+            <input type="text" id="document_type" name="document_type" value="{{ document.DocumentType }}" required>
+
+            <label for="document_seria">Серия документа:</label>
+            <input type="text" id="document_seria" name="document_seria" value="{{ document.DocumentSeria }}" required>
+
+            <label for="document_number">Номер документа:</label>
+            <input type="text" id="document_number" name="document_number" value="{{ document.DocumentNumber }}" required>
+
+            <label for="date_document">Дата выдачи:</label>
+            <input type="date" id="date_document" name="date_document" value="{{ document.DateDocument.strftime('%Y-%m-%d') }}" required>
+
+            <label for="document_who">Кем выдан:</label>
+            <input type="text" id="document_who" name="document_who" value="{{ document.DocumentWho }}" required>
+        </div>
+
+        <div class="form-section">
+            <h2>Идентификационная информация</h2>
+            <label for="inn">ИНН:</label>
+            <input type="number" id="inn" name="inn" value="{{ employee.Inn }}" required>
+
+            <label for="snils">СНИЛС:</label>
+            <input type="text" id="snils" name="snils" value="{{ employee.Snils }}" required>
+        </div>
+
+        <div class="form-button-container">
+            <button type="submit" class="submit-button">Сохранить изменения</button>
+        </div>
+    </form>
+</body>
+</html>

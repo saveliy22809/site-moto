@@ -1,0 +1,85 @@
+/* Общие стили */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8; /* Мягкий светло-серый фон */
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Header */
+.header {
+    background-color: #2c3e50;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.header nav {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.header nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 15px 25px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.header nav a:hover {
+    background-color: #2980b9;
+    transform: scale(1.1);
+}
+
+/* Основной контент */
+main {
+    padding: 25px;
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Приветственная секция */
+.welcome-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.welcome-section h1 {
+    font-size: 24px;
+    color: #3498db;
+}
+
+/* Стили для списка и подсказок */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 15px;
+    padding-left: 25px;
+    position: relative;
+}
+
+ul li::before {
+    content: "📢";
+    position: absolute;
+    left: 0;
+    color: #28a745;
+}
+
+/* Футер */
+.footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 14px;
+    margin-top: 30px;
+}

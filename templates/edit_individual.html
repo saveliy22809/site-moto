@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редактирование физического лица</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1 class="form-title">Редактировать данные физического лица</h1>
+
+        <form method="POST">
+            <div class="form-section">
+                <h2>Физическое лицо</h2>
+                <label for="familiya">Фамилия:</label>
+                <input type="text" id="familiya" name="familiya" value="{{ individual.Familiya }}" required>
+
+                <label for="imya">Имя:</label>
+                <input type="text" id="imya" name="imya" value="{{ individual.Imya }}" required>
+
+                <label for="otchestvo">Отчество:</label>
+                <input type="text" id="otchestvo" name="otchestvo" value="{{ individual.Otchestvo }}" required>
+
+                <label for="date_of_birth">Дата рождения:</label>
+                <input type="date" id="date_of_birth" name="date_of_birth" value="{{ individual.DateOfBirth.strftime('%Y-%m-%d') }}" required>
+
+                <label for="address">Адрес:</label>
+                <input type="text" id="address" name="address" value="{{ individual.Address }}" required>
+
+                <label for="phone">Телефон:</label>
+                <input type="text" id="phone" name="phone" value="{{ individual.Phone }}" required>
+            </div>
+
+            <div class="form-button-container">
+                <button type="submit" class="submit-button">Сохранить изменения</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
