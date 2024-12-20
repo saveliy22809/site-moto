@@ -13,7 +13,7 @@ class Individuals(Base):
     Address = Column(String(255))
     Phone = Column(String(15))
 
-    employees = relationship("Employee", back_populates="individual")
+    employees = relationship("Employee", back_populates="individual",cascade="all, delete-orphan")
 
 class Employee(Base):
     __tablename__ = "Employees"
@@ -27,6 +27,11 @@ class Employee(Base):
     Inn = Column(Integer)
     Snils = Column(String(11))
     individual = relationship("Individuals", back_populates="employees")
+
+    education = relationship("Education", cascade="all, delete-orphan", passive_deletes=True)
+    bank_cards = relationship("BankCard", cascade="all, delete-orphan", passive_deletes=True)
+    documents = relationship("Document", cascade="all, delete-orphan", passive_deletes=True)
+    positions = relationship("EmployeePosition", cascade="all, delete-orphan", passive_deletes=True)
 
 class Education(Base):
     __tablename__ = "Education"

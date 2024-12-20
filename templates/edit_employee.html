@@ -35,11 +35,11 @@
             <label for="education_level">Уровень образования:</label>
             <select id="education_level" name="education_level" required>
                 <option value="" disabled>Выберите уровень</option>
-                <option value="Среднее" {% if employee.EducationLevel == "Среднее" %}selected{% endif %}>Среднее</option>
-                <option value="Среднее профессиональное" {% if employee.EducationLevel == "Среднее профессиональное" %}selected{% endif %}>Среднее профессиональное</option>
-                <option value="Высшее (бакалавр)" {% if employee.EducationLevel == "Высшее (бакалавр)" %}selected{% endif %}>Высшее (бакалавр)</option>
-                <option value="Высшее (магистр)" {% if employee.EducationLevel == "Высшее (магистр)" %}selected{% endif %}>Высшее (магистр)</option>
-                <option value="Аспирантура" {% if employee.EducationLevel == "Аспирантура" %}selected{% endif %}>Аспирантура</option>
+                <option value="Среднее" {% if employee.EducationLevel =="Среднее" %}selected{% endif %}>Среднее</option>
+                <option value="Среднее профессиональное" {% if employee.EducationLevel =="Среднее профессиональное" %}selected{% endif %}>Среднее профессиональное</option>
+                <option value="Высшее (бакалавр)" {% if employee.EducationLevel =="Высшее (бакалавр)" %}selected{% endif %}>Высшее (бакалавр)</option>
+                <option value="Высшее (магистр)" {% if employee.EducationLevel =="Высшее (магистр)" %}selected{% endif %}>Высшее (магистр)</option>
+                <option value="Аспирантура" {% if employee.EducationLevel =="Аспирантура" %}selected{% endif %}>Аспирантура</option>
             </select>
 
             <label for="education_spec">Специальность:</label>

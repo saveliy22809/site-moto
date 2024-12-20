@@ -365,7 +365,7 @@ async def edit_employee(
 
     # Сохранение изменений
     db.commit()
-    return RedirectResponse("/employee", status_code=303)
+    return RedirectResponse("/employees", status_code=303)
 
 @app.get("/details/{regnumber}", response_class=HTMLResponse)
 async def employee_details(request: Request, regnumber: int, db: Session = Depends(get_db)):

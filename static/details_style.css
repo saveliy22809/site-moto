@@ -1,26 +1,26 @@
 /* Общие стили */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f4f8; /* Мягкий светло-серый фон */
+    font-family: 'Arial', sans-serif;
+    background-color: #fefefe; /* Белый фон */
     margin: 0;
     padding: 0;
     color: #333;
 }
 
 h1, h2 {
-    color: #2c3e50; /* Более темный оттенок синего */
-    font-family: 'Roboto', sans-serif;
+    color: #d32f2f; /* Красный */
+    font-family: 'Montserrat', sans-serif;
     margin-bottom: 15px;
 }
 
 h1 {
-    font-size: 2.5em;
+    font-size: 2.8em;
     text-align: center;
 }
 
 h2 {
-    font-size: 1.8em;
-    border-bottom: 3px solid #3498db; /* Синий подчеркивающий элемент */
+    font-size: 2em;
+    border-bottom: 3px solid #e57373; /* Светлый красный */
     padding-bottom: 5px;
 }
 
@@ -36,28 +36,28 @@ h2 {
 
 /* Карточка */
 .card {
-    background: white;
-    border-radius: 12px; /* Округлые углы */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Мягкая тень */
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
     padding: 25px;
     transition: transform 0.3s, box-shadow 0.3s ease;
     margin: 20px 0;
 }
 
 .card:hover {
-    transform: translateY(-5px); /* Легкий эффект подъема */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* Увеличенная тень */
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 /* Информационный блок */
 .info-block p {
     margin: 10px 0;
-    font-size: 16px;
-    line-height: 1.5;
+    font-size: 18px;
+    line-height: 1.6;
 }
 
 .info-block p strong {
-    color: #3498db;
+    color: #d32f2f; /* Красный */
 }
 
 /* Кнопки */
@@ -68,16 +68,16 @@ h2 {
 
 .back-button {
     display: inline-block;
-    background-color: #3498db;
+    background-color: #d32f2f; /* Красный */
     color: white;
     text-decoration: none;
     padding: 12px 25px;
-    border-radius: 8px; /* Округлые углы */
+    border-radius: 12px;
     font-weight: bold;
     transition: background-color 0.3s, transform 0.3s;
 }
 
 .back-button:hover {
-    background-color: #2980b9;
+    background-color: #c62828; /* Темный красный */
     transform: scale(1.05);
 }

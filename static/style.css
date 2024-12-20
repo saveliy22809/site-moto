@@ -1,35 +1,62 @@
 /* Общие стили */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Arial', sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f0f4f8;
+    background-color: #fefefe;
     color: #333;
 }
+.header {
+    background-color: #d32f2f; /* Красный */
+    padding: 20px 0;
+    text-align: center;
+}
+
+.header nav {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.header nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 15px 25px;
+    border-radius: 12px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.header nav a:hover {
+    background-color: #c62828; /* Темный красный */
+    transform: scale(1.1);
+}
+
+
 
 /* Основной заголовок */
 .main-title {
     text-align: center;
     color: white;
     padding: 25px 0;
-    background-color: #2c3e50;
+    background-color: #d32f2f; /* Красный */
 }
 
 /* Таблица */
 .styled-table {
     width: 100%;
     border-collapse: collapse;
-    margin: 20px 0;
+    margin: 0px 0;
     font-size: 18px;
     text-align: left;
     background-color: #fff;
-    border-radius: 8px;
+    border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .styled-table th {
-    background-color: #2980b9;
+    background-color: #c62828; /* Темный красный */
     color: white;
     text-align: center;
     padding: 15px;
@@ -62,44 +89,44 @@ body {
     text-align: center;
     padding: 12px 18px;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     color: white;
     font-weight: bold;
     transition: background-color 0.3s;
 }
 
 .details-button {
-    background-color: #3498db;
+    background-color: #d32f2f; /* Красный */
 }
 
 .edit-button {
-    background-color: #f39c12;
+    background-color: #f28d7f; /* Светлый красный */
 }
 
 .delete-button {
-    background-color: #e74c3c;
+    background-color: #e74c3c; /* Ярко-красный */
 }
 
 .details-button:hover,
 .edit-button:hover,
 .delete-button:hover {
-    background-color: #2980b9;
+    background-color: #c62828; /* Темный красный */
 }
 
 /* Форма */
 .form-container {
     max-width: 800px;
     margin: 20px auto;
-    background: white;
+    background: #ffffff;
     padding: 25px;
-    border-radius: 12px;
+    border-radius: 15px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 .form-title {
     text-align: center;
     font-size: 24px;
-    color: #3498db;
+    color: #d32f2f; /* Красный */
     margin-bottom: 20px;
 }
 
@@ -109,51 +136,50 @@ input, textarea, select {
     padding: 12px;
     margin-bottom: 20px;
     border: 2px solid #ddd;
-    border-radius: 8px;
+    border-radius: 12px;
     font-size: 14px;
 }
 
 input:focus, textarea:focus, select:focus {
-    border-color: #3498db;
+    border-color: #d32f2f; /* Красный */
 }
 
 .submit-button {
-    background-color: #3498db;
+    background-color: #d32f2f; /* Красный */
     color: white;
     border: none;
     padding: 12px 20px;
     font-size: 16px;
-    border-radius: 8px;
+    border-radius: 12px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 .submit-button:hover {
-    background-color: #2980b9;
+    background-color: #c62828; /* Темный красный */
 }
 
 /* Кнопка добавления сотрудника */
 .add-employee-button {
-    background-color: #28a745;
+    background-color: #28a745; /* Зеленый */
     color: white;
     padding: 12px 20px;
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: 12px;
     font-weight: bold;
     transition: background-color 0.3s ease;
 }
 
 .add-employee-button:hover {
     background-color: white;
-    color: #28a745;
+    color: #28a745; /* Зеленый */
 }
 
 /* Футер */
 footer {
-    background-color: #2c3e50;
+    background-color: #d32f2f; /* Красный */
     color: white;
     text-align: center;
     padding: 20px 0;
     font-size: 14px;
 }
-
